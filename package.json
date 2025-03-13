@@ -2,6 +2,7 @@
     "name": "fai-common-maps",
     "version": "1.0.0",
     "description": "npm module for common maps functionalities for Farmwise-AI",
+    "main": "dist/index.js",
     "keywords": [
         "farmwiwse-AI",
         "FAI-maps",
@@ -19,11 +20,23 @@
     "type": "module",
     "scripts": {
         "build": "tsc",
-        "ci": "pnpm run build",
-        "format": "prettier --write ."
+        "ci": "pnpm run build && npm run check-format && npm run check-exports",
+        "format": "prettier --write .",
+        "check-format": "prettier --check .",
+        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+        "test": "vitest run"
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": "./dist/index.js",
+            "default": "./dist/index.cjs"
+        }
     },
     "devDependencies": {
+        "@arethetypeswrong/cli": "^0.17.4",
         "prettier": "^3.5.3",
-        "typescript": "^5.8.2"
+        "typescript": "^5.8.2",
+        "vitest": "^3.0.8"
     }
 }
