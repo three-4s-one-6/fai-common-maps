@@ -1,0 +1,29 @@
+{
+    "name": "fai-common-maps",
+    "version": "1.0.0",
+    "description": "npm module for common maps functionalities for Farmwise-AI",
+    "keywords": [
+        "farmwiwse-AI",
+        "FAI-maps",
+        "FAI-common"
+    ],
+    "homepage": "https://github.com/three-4s-one-6/fai-common-maps",
+    "author": "Tamil Maran <tamilmaran001@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/three-4s-one-6/fai-common-maps"
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "ci": "pnpm run build",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.2"
+    }
+}
